@@ -1,3 +1,8 @@
+# Dockerizing
+I follow this steps to dockerize the app
+```
+https://www.indellient.com/blog/how-to-dockerize-an-angular-application-with-nginx/
+```
 # CourseManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
