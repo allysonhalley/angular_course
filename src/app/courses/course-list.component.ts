@@ -14,21 +14,21 @@ export class CourseListComponent {
       {
         id: 1,
         name: 'Angular: Forms',
-        imageUrl: '',
+        imageUrl: '/assets/images/forms.png',
         price: 99.99,
         code: 'XPS-8796',
         duration: 120,
-        rating: 5.4,
+        rating: 4.5,
         releaseDate: 'May, 1, 2013'
       },
       {
         id: 2,
-        name: 'Angular: http',
-        imageUrl: '',
+        name: 'Angular: HTTP',
+        imageUrl: '/assets/images/http.png',
         price: 49.99,
         code: 'XPS-8796',
         duration: 80,
-        rating: 4,
+        rating: 5,
         releaseDate: 'August, 3, 1988'
       }
     ]
