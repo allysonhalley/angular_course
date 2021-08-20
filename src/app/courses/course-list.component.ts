@@ -16,7 +16,7 @@ export class CourseListComponent {
   constructor(private courseService: CourseService){ }
 
   ngOnInit(): void {
-    this._courses = this.courseService.retriveAll();
+    this._courses = this.courseService.retrieveAll();
     this.filteredCourses = this._courses;
   }
 

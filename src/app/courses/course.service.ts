@@ -6,8 +6,19 @@ import { Injectable } from '@angular/core';
 })
 export class CourseService {
 
-  retriveAll(): Course[] {
+  retrieveAll(): Course[] {
     return COURSES;
+  }
+  retrieveById(id: number): Course {
+    // In this line a charactere " ! " is present because i had a error about null possibility
+    return COURSES.find((courseItearator: Course) => courseItearator.id === id)!;
+  }
+
+  save(course: Course): void{
+    if(course.id){
+      const index = COURSES.findIndex((courseItereator: Course) => courseItereator.id === course.id);
+      COURSES[index] = course;
+    }
   }
 
 }
