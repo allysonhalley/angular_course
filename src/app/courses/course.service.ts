@@ -1,23 +1,30 @@
 import { Course } from './course';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CourseService {
 
-  retrieveAll(): Course[] {
-    return COURSES;
+  private courseUrl: string = 'http://localhost:3100/api/courses';
+
+  constructor(private httpClient: HttpClient){}
+
+  retrieveAll(): Observable<Course[]> {
+    return this.httpClient.get<Course[]>(this.courseUrl);
   }
-  retrieveById(id: number): Course {
+  retrieveById(id: number): Observable<Course> {
     // In this line a charactere " ! " is present because i had a error about null possibility
-    return COURSES.find((courseItearator: Course) => courseItearator.id === id)!;
+    return this.httpClient.get<Course>(`${this.courseUrl}/${id}`);
   }
 
-  save(course: Course): void{
+  save(course: Course): Observable<Course>{
     if(course.id){
-      const index = COURSES.findIndex((courseItereator: Course) => courseItereator.id === course.id);
-      COURSES[index] = course;
+      return this.httpClient.put<Course>(`${this.courseUrl}/${course.id}`, course);
+    }else{
+      return this.httpClient.post<Course>(`${this.courseUrl}`, course);
     }
   }
 
