@@ -45,4 +45,4 @@ testem.log
 Thumbs.db
 
 # Serve folder
-/server/node_modules
+/serve/node_modules
