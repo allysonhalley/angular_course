@@ -4,12 +4,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CourseModule } from './courses/course.module';
 import { CoreModule } from './core/core.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    BrowserModule,
     HttpClientModule,
     CourseModule,
     CoreModule,

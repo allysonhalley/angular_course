@@ -11,6 +11,9 @@ import { Error404Component } from './component/404/error-404.component';
   imports: [
     RouterModule.forChild([
       {
+        path: '', redirectTo: 'courses', pathMatch: 'full'
+      },
+      {
         path: '**', component: Error404Component
       }
     ])
